@@ -12,11 +12,51 @@
       alert(`Hi ${name}! Let's Play!!`);
       // gets name and greets them
 
+
       let select = prompt(`Who are you: Bear, Ninja, or Hunter?`);
       // gets the selection of the player
 
-      alert(`${name}, You picked ${select}! \nThe computer picked Bear!`)
-      console.log(`${name}, You picked ${select}! \nThe computer picked Bear!`);
+      
+
+      let cSelect = `Bear`;
+      let result;
+      if (select === `Bear` && cSelect === `Bear`) {
+        result = `tie`;
+      } else if (select === `Ninja` && cSelect === `Ninja`) {
+        result = `tie`;
+      } else if (select === `Hunter` && cSelect === `Hunter`) {
+        result = `tie`;
+      } else if (select === `Bear` && cSelect=== `Ninja`) {
+        result = `win`;
+      } else if (select === `Ninja` && cSelect=== `Hunter`) {
+        result = `win`;
+      } else if (select === `Hunter` && cSelect=== `Bear`) {
+        result = `win`;
+      } else if (select === `Hunter` && cSelect=== `Ninja`) {
+        result = `lose`;
+      } else if (select === `Bear` && cSelect=== `Hunter`) {
+        result = `lose`;
+      } else if (select === `Ninja` && cSelect=== `Bear`) {
+        result = `lose`;
+      }
+      
+      
+      switch (result) {
+        case `tie`:
+        alert(`${name}, You picked ${select}! \nThe computer picked ${cSelect}! \nYou Tie!!`)
+        console.log(`${name}, You picked ${select}! \nThe computer picked ${cSelect}! \nYou Tie!!`);
+        break;
+
+        case `win`:
+        alert(`${name}, You picked ${select}! \nThe computer picked ${cSelect}! \nYou Win!!`)
+        console.log(`${name}, You picked ${select}! \nThe computer picked ${cSelect}! \nYou Win!!`);
+        break;
+
+        case `lose`:
+        alert(`${name}, You picked ${select}! \nThe computer picked ${cSelect}! \nYou Lose!!`)
+        console.log(`${name}, You picked ${select}! \nThe computer picked ${cSelect}! \nYou Lose!!`);
+        break;
+      }
       
     </script>
   </body>
